@@ -23,7 +23,6 @@ interface WordDefinition {
   }[];
 }
 function App() {
-  const [word, setWorld] = useState("")
   const [meaning, setMeaning] = useState<WordDefinition | null>(null)
 
   const dictAPI = async () => {
