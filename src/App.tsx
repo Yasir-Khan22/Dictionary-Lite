@@ -1,6 +1,8 @@
+import { Container } from "@mui/material";
 import axios from "axios"
 import './App.css'
 import { useState, useEffect } from "react";
+import Header from "./components/Header";
 
 interface WordDefinition {
   word: string;
@@ -21,6 +23,7 @@ interface WordDefinition {
   }[];
 }
 function App() {
+  const [word, setWorld] = useState("")
   const [meaning, setMeaning] = useState<WordDefinition | null>(null)
 
   const dictAPI = async () => {
@@ -41,14 +44,15 @@ function App() {
     dictAPI()
   }, [])
   return (
-    <div>
-      <div><label><input type="text" placeholder="Search for a word." /></label></div>
+    <Container maxWidth="md">
       <h1 style={{ display: "block" }}>Dictionary</h1>
-
       <h2>{meaning?.word}</h2>
       <h3>{meaning?.phonetic}</h3>
       <p>{meaning?.origin}</p>
-    </div>
+      <Header >
+
+      </Header>
+    </Container>
   )
 }
 
