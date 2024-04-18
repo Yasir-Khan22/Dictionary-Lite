@@ -1,6 +1,6 @@
 import React from "react"
-import "./components/Header.css"
-import "./components/Input.css"
+import "./Styles/Header.css"
+import "./Styles/Input.css"
 import axios from "axios"
 import './App.css'
 import { useState } from "react";
@@ -34,7 +34,6 @@ function App() {
       try {
         const data = await axios.get<WordDefinition[]>(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
         setCompleteWords(data.data[0]);
-        console.log(data);
 
       } catch (error) {
         console.log(error, "fetching data failed.");
@@ -46,7 +45,6 @@ function App() {
     setWord("")
   };
 
-  console.log(word)
 
   return (
     <>
@@ -62,13 +60,13 @@ function App() {
             id="search"
             placeholder="Search for the definition of a word"
             required
-            className="py-2 px-4 border-b-2 border-blue-400 outline-none focus:border-blue-600 transition w-full text-xl lg:text-2xl"
+            className="py-2 px-4 border-b-[2px] border-black-600 outline-none focus:border-black-600 transition w-full text-xl lg:text-2xl"
             value={word}
             onChange={(e) => setWord(e.target.value)}
           />
           <button
             type="submit"
-            className="bg-blue-600 text-white text-xl lg:text-2xl py-2 px-4 rounded shadow mt-4 hover:bg-blue-800 transition-all duration-200"
+            style={{ color: "#fff", backgroundColor: "#000", padding: "0.5rem 1rem", margin: "0.5rem 1rem", fontSize: "1.5rem" }}
           >
             Look for a Definition
           </button>
@@ -99,7 +97,7 @@ function App() {
             <ol className="my-10 flex flex-col">
               {completeWords.meanings.map((meaning, index) => (
                 <div key={index} className="mt-8">
-                  <li className=" bg-[#000] text-[#fff] rounded p-2 m-2 font-bold text-xl text-slate-500">
+                  <li className=" bg-[#000] text-white rounded p-2 m-2 font-bold text-xl">
                     {meaning.partOfSpeech}
                   </li>
 
