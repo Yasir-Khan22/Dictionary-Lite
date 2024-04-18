@@ -1,0 +1,29 @@
+.input {
+all: unset; 
+padding-top: 0.5rem;
+padding-bottom: 0.5rem; 
+padding-left: 1rem;
+padding-right: 1rem; 
+border-bottom-width: 2px; 
+border-color: #60A5FA; 
+outline-style: none; 
+width: 100%; 
+font-size: 1.25rem;
+line-height: 1.75rem; 
+transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+transition-duration: 300ms; 
+
+
+
+@media (min-width: 1024px) { 
+    .input {
+  font-size: 1.5rem;
+line-height: 2rem; 
+ }
+}
+
+
+
+
+}

@@ -1,13 +1,10 @@
-import { TextField } from "@mui/material";
+import "./Header.css"
+import "./Input.css"
 
 const Header = () => {
     return (
         <div>
-            <hr />
-            <br />
-            <div>
-                <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-            </div>
+
         </div>
     )
 }
